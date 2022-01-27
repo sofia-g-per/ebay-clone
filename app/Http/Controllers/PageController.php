@@ -18,4 +18,9 @@ class PageController extends Controller
         return view('index', compact('lots', 'categories'));
     }
 
+    public function single($id) {
+
+        return view('single-lot');
+    }
+
 }
