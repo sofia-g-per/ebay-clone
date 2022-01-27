@@ -22,3 +22,5 @@ Route::get('/', [PageController::class, "index"])->name('main-page');
 Route::get('/lots/{id}', [PageController::class, "single"])->name('lot-page');
 
 Route::get('/lots/category/{id}', [LotController::class, "searchByCategory"])->name('category-search');
+
+Route::get('/search', [LotController::class, "search"])->name('search');

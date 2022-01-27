@@ -23,5 +23,6 @@ class PageController extends Controller
 
         return view('single-lot', compact('lot'));
     }
+    
 
 }
