@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageController::class, "index"]);
-Route::get('/lots/{id}', [PageController::class, "single"]);
+Route::get('/', [PageController::class, "index"])->name('main-page');
+Route::get('/lots/{id}', [PageController::class, "single"])->name('lot-page');
