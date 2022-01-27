@@ -20,7 +20,9 @@ class PageController extends Controller
 
     public function single($id) {
 
-        return view('single-lot');
+        $lot = Lot::findOrFail($id);
+
+        return view('single-lot', compact('lot'));
     }
 
 }
