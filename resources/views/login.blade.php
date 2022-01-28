@@ -7,6 +7,7 @@
     <form class="form container" 
         action="{{ route('login') }}" 
         method="post"> <!-- form--invalid -->
+        @csrf
       <h2>Вход</h2>
       <div class="form__item"> <!-- form__item--invalid -->
         <label for="email">E-mail <sup>*</sup></label>

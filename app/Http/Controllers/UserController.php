@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -44,6 +45,12 @@ class UserController extends Controller
     }
 
     public function login( Request $request ) {
-        dd($request->all());
+        // dd($request->all());
+        
+        $userInfo = $request->only('email', 'password');
+
+        if(Auth::attempt($userInfo)) {
+            return redirect('/');
+        }
     }
 }
