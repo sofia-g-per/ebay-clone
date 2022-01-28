@@ -31,3 +31,5 @@ Route::post('/sign-up', [UserController::class, "signup"])->name('signup');
 Route::get('/login', [PageController::class, "login"])->name('login-page');
 Route::post('/login', [UserController::class, "login"])->name('login');
 
+Route::get('/logout', [UserController::class, "logout"])->name('logout');
+

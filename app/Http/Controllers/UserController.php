@@ -46,11 +46,33 @@ class UserController extends Controller
 
     public function login( Request $request ) {
         // dd($request->all());
-        
+
         $userInfo = $request->only('email', 'password');
+
+        $validator = Validator::make($userInfo, [
+            'email'=>'required|email:rfc,dns,filter',
+            'password'=>'required',
+        ]);
+
+        //если одно из полней не заполнено
+        if ($validator->fails()) {
+            return redirect( route('login-page') )
+                ->withErrors($validator)
+                ->withInput();
+        }
 
         if(Auth::attempt($userInfo)) {
             return redirect('/');
         }
+
+        //если  не прошла авторизация (пароль не соответствует почте)
+        return redirect(route('login-page'))
+        ->withErrors(['auth_error' => 'Email или пароль введены не корректно'])
+        ->withInput();
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect('/');
     }
 }
