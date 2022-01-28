@@ -4,7 +4,7 @@
 
 @section('page-content')
     <x-nav></x-nav>
-    <form class="form container form--invalid" action="https://echo.htmlacademy.ru" method="post" autocomplete="off"> <!-- form
+    <form class="form container form--invalid" action="{{ route('signup') }}" method="post" autocomplete="off"> <!-- form
         --invalid -->
         <h2>Регистрация нового аккаунта</h2>
         <div class="form__item"> <!-- form__item--invalid -->
