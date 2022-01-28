@@ -33,3 +33,9 @@ Route::post('/login', [UserController::class, "login"])->name('login');
 
 Route::get('/logout', [UserController::class, "logout"])->name('logout');
 
+//middleware - отвечает за запуск соответсвующего файла посредника (middleware), 
+//который осуществляет прописанную в нём логику до перенаправления в addlor
+//в данном случае используется для переадресации не авторизированного пользователя 
+//при попытке зайти на страницу добавления поста
+Route::get('/addlot', [UserController::class, "addlot"])->name('addlot->page')->middleware('customAuth');
+
