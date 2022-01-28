@@ -24,5 +24,8 @@ class PageController extends Controller
         return view('single-lot', compact('lot'));
     }
     
+    public function signup() {
+        return view('sign-up');
+    }
 
 }
