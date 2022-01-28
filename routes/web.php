@@ -29,4 +29,5 @@ Route::get('/sign-up', [PageController::class, "signup"])->name('signup-page');
 Route::post('/sign-up', [UserController::class, "signup"])->name('signup');
 
 Route::get('/login', [PageController::class, "login"])->name('login-page');
+Route::post('/login', [UserController::class, "login"])->name('login');
 

@@ -4,7 +4,9 @@
 
 @section('page-content')
     <x-nav></x-nav>
-    <form class="form container" action="#" method="post"> <!-- form--invalid -->
+    <form class="form container" 
+        action="{{ route('login') }}" 
+        method="post"> <!-- form--invalid -->
       <h2>Вход</h2>
       <div class="form__item"> <!-- form__item--invalid -->
         <label for="email">E-mail <sup>*</sup></label>

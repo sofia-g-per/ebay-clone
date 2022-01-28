@@ -42,4 +42,8 @@ class UserController extends Controller
         return redirect(route('main-page'));
 
     }
+
+    public function login( Request $request ) {
+        dd($request->all());
+    }
 }
