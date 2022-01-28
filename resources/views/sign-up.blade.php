@@ -6,6 +6,7 @@
     <x-nav></x-nav>
     <form class="form container form--invalid" action="{{ route('signup') }}" method="post" autocomplete="off"> <!-- form
         --invalid -->
+        @csrf
         <h2>Регистрация нового аккаунта</h2>
         <div class="form__item"> <!-- form__item--invalid -->
         <label for="email">E-mail <sup>*</sup></label>
