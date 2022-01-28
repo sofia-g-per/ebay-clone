@@ -26,5 +26,7 @@ Route::get('/lots/category/{id}', [LotController::class, "searchByCategory"])->n
 Route::get('/search', [LotController::class, "search"])->name('search');
 
 Route::get('/sign-up', [PageController::class, "signup"])->name('signup-page');
-
 Route::post('/sign-up', [UserController::class, "signup"])->name('signup');
+
+Route::get('/login', [PageController::class, "login"])->name('login-page');
+

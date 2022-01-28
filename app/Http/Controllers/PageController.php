@@ -28,4 +28,8 @@ class PageController extends Controller
         return view('sign-up');
     }
 
+    public function login() {
+        return view('login');
+    }
+
 }
