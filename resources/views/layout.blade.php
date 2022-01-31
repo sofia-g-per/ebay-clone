@@ -16,5 +16,6 @@
       </main>
     </div>
     <x-footer></x-footer>
+    @yield('scripts')
 </body>
 </html>
