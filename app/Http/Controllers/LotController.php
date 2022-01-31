@@ -28,4 +28,9 @@ class LotController extends Controller
 
         return view('search', compact('search', 'lots'));
     }
+
+    public function addlot(Request $request) {
+        
+        dd($request->all());
+    }
 }

@@ -14,7 +14,8 @@
 
 @section('page-content')
     <x-nav></x-nav>
-    <form class="form form--add-lot container form--invalid" action="https://echo.htmlacademy.ru" method="post"> <!-- form--invalid -->
+    <form class="form form--add-lot container form--invalid" action="{{route('addlot')}}" method="post"> <!-- form--invalid -->
+        @csrf
         <h2>Добавление лота</h2>
         <div class="form__container-two">
         <div class="form__item form__item--invalid"> <!-- form__item--invalid -->

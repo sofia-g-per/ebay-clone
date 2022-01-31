@@ -38,6 +38,7 @@ Route::get('/logout', [UserController::class, "logout"])->name('logout');
 //в данном случае используется для переадресации не авторизированного пользователя 
 //при попытке зайти на страницу добавления поста
 Route::get('/addlot', [PageController::class, "addlot"])->name('addlot-page')->middleware('customAuth');
+Route::post('/addlot', [LotController::class, "addlot"])->name('addlot')->middleware('customAuth');
 
 
 
