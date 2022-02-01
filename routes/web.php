@@ -40,5 +40,7 @@ Route::get('/logout', [UserController::class, "logout"])->name('logout');
 Route::get('/addlot', [PageController::class, "addlot"])->name('addlot-page')->middleware('customAuth');
 Route::post('/addlot', [LotController::class, "addlot"])->name('addlot')->middleware('customAuth');
 
+Route::get('/profile', [PageController::class, "profile"])->name('profile')->middleware('customAuth');
+
 
 

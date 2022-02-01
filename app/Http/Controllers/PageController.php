@@ -37,4 +37,9 @@ class PageController extends Controller
         return view('add-lot');
     }
 
+    public function profile() {
+        
+        return view('profile');
+    }
+
 }

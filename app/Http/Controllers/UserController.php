@@ -62,7 +62,7 @@ class UserController extends Controller
         }
 
         if(Auth::attempt($userInfo)) {
-            return redirect('/');
+            return redirect(route('main-page'));
         }
 
         //если  не прошла авторизация (пароль не соответствует почте)
