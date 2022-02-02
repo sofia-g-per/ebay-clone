@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Lot;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class PageController extends Controller
@@ -38,8 +40,16 @@ class PageController extends Controller
     }
 
     public function profile() {
-        
-        return view('profile');
+        Carbon::setLocale('ru');
+        $user = Auth::user();
+
+        $bets = $user->bets;
+        $css_status = [
+            'winner' => 'rates__item--win',
+            'end' => 'rates__item--end'
+        ];
+
+        return view('profile', ['id' => $user->id, 'bets' => $bets, 'status' => $css_status]);
     }
 
 }

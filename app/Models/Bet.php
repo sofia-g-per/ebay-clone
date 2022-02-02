@@ -11,4 +11,11 @@ class Bet extends Model
 
     public $timestamps = false;
 
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function lot() {
+        return $this->hasOne('App\Models\Lot', 'lot_id', 'id');
+    }
 }
