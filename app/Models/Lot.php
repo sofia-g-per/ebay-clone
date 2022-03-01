@@ -18,6 +18,5 @@ class Lot extends Model
 
     public function bets() {
         return $this->hasMany('App\Models\Bet');
-
     }
 }

@@ -16,6 +16,10 @@ class Bet extends Model
     }
 
     public function lot() {
-        return $this->hasOne('App\Models\Lot', 'lot_id', 'id');
+        return $this->belongsTo('App\Models\Lot');
+    }
+
+    public function author() {
+        return $this->belongsTo('App\Models\User');
     }
 }

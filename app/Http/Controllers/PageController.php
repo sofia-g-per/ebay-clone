@@ -44,6 +44,7 @@ class PageController extends Controller
         $user = Auth::user();
 
         $bets = $user->bets;
+        $bets->load('lot', 'author');
         $css_status = [
             'winner' => 'rates__item--win',
             'end' => 'rates__item--end'

@@ -41,7 +41,6 @@ class User extends Authenticatable
     ];
 
     public function bets() {
-        
         return $this->hasMany('App\Models\Bet', 'author_id');
     }
 
