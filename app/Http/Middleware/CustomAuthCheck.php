@@ -18,7 +18,7 @@ class CustomAuthCheck
     public function handle(Request $request, Closure $next)
     {
         if(!Auth::check()) {
-            return redirect("/");
+            return redirect(route("login-page"));
         }
         return $next($request);
     }

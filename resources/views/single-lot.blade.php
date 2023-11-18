@@ -28,10 +28,12 @@
               Мин. ставка <span>{{ $lot->price + $lot->bet_step }}</span>
             </div>
           </div>
-          <form class="lot-item__form" action="https://echo.htmlacademy.ru" method="post" autocomplete="off">
-            <p class="lot-item__form-item form__item form__item--invalid">
+          <form class="lot-item__form @if( $errors->any() ) {{ 'form--invalid' }} @endif" action="{{route('addbet')}}"  method="post" autocomplete="off">
+            <p class="lot-item__form-item form__item @error('bet-price') form__item--invalid @enderror">
+              @csrf
               <label for="cost">Ваша ставка</label>
-              <input id="cost" type="text" name="cost" placeholder="{{ $lot->price + $lot->bet_step }}">
+              <input id="cost" type="text" name="bet-price" placeholder="{{ $lot->price + $lot->bet_step }}">
+              <input style="display:none;" type="number" name="lot-id" value="{{$lot->id}}">
               <span class="form__error">Введите ставку </span>
             </p>
             <button type="submit" class="button">Сделать ставку</button>

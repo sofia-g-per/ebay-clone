@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LotController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BetController;
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,14 +34,10 @@ Route::post('/login', [UserController::class, "login"])->name('login');
 
 Route::get('/logout', [UserController::class, "logout"])->name('logout');
 
-//middleware - отвечает за запуск соответсвующего файла посредника (middleware), 
-//который осуществляет прописанную в нём логику до перенаправления в addlot
-//в данном случае используется для переадресации не авторизированного пользователя 
-//при попытке зайти на страницу добавления поста
 Route::get('/addlot', [PageController::class, "addlot"])->name('addlot-page')->middleware('customAuth');
 Route::post('/addlot', [LotController::class, "addlot"])->name('addlot')->middleware('customAuth');
-
 Route::get('/profile', [PageController::class, "profile"])->name('profile')->middleware('customAuth');
+Route::post('/addbet', [BetController::class, "addbet"])->name('addbet')->middleware('customAuth');
 
 
 
