@@ -21,8 +21,8 @@ class PageController extends Controller
 
     public function single($id) {
 
-        $lot = Lot::findOrFail($id);
-
+        $lot = Lot::findOrFail($id)->load("bets", "category");
+        $lot->bets->load("author");
         return view('single-lot', compact('lot'));
     }
     
